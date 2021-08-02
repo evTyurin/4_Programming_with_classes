@@ -1,7 +1,8 @@
 package epam.learning;
 
-import java.util.Scanner;
-import java.util.ArrayList;
+import epam.learning.ex2_1.Sentence;
+import epam.learning.ex2_1.Text;
+import epam.learning.ex2_1.Word;
 
 public class Main {
 

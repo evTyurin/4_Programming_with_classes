@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex2_1;
 
 public class Word {
     private String word;
