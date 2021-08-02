@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_1;
 
 public class Test1 {
     private int a;
