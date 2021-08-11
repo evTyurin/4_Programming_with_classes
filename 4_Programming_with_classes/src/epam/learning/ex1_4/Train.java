@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_4;
 
 public class Train {
     private String finalDestination;

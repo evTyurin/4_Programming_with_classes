@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_3;
 
 public class Student {
     private String surname;

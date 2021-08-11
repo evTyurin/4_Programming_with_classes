@@ -1,11 +1,20 @@
-package epam.learning;
+package epam.learning.ex1_10;
 
 public class Airline {
     private String destination;
     private String flightNumber;
     private String airplaneType;
     private String arrivingTime;
-    private String dayOfWeek;
+    private DayOfWeek dayOfWeek;
+
+    public Airline (String destination, String flightNumber, String airplaneType,
+                    String arrivingTime, DayOfWeek dayOfWeek) {
+        this.destination = destination;
+        this.flightNumber = flightNumber;
+        this.airplaneType = airplaneType;
+        this.arrivingTime = arrivingTime;
+        this.dayOfWeek = dayOfWeek;
+    }
 
     public String getDestination() {
         return destination;
@@ -39,20 +48,23 @@ public class Airline {
         this.arrivingTime = arrivingTime;
     }
 
-    public String getDayOfWeek() {
+    public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
 
-    public void setDayOfWeek(String dayOfWeek) {
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
 
     @Override
-    public String toString () {
-        String toString = "destination = " + getDestination() + " flightNumber = " + getFlightNumber() +
-                " airplaneType = " + getAirplaneType() + " arrivingTime = " + getArrivingTime() +
-                " dayOfWeek = " + getDayOfWeek();
-        return toString;
+    public String toString() {
+        return "Airline{" +
+                "destination='" + destination + '\'' +
+                ", flightNumber='" + flightNumber + '\'' +
+                ", airplaneType='" + airplaneType + '\'' +
+                ", arrivingTime='" + arrivingTime + '\'' +
+                ", dayOfWeek=" + dayOfWeek +
+                '}';
     }
 }
 

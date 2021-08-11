@@ -1,8 +1,9 @@
 package epam.learning;
 
-import epam.learning.ex2_1.Sentence;
-import epam.learning.ex2_1.Text;
-import epam.learning.ex2_1.Word;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import epam.learning.ex2_5.*;
 
 public class Main {
 
@@ -262,41 +263,19 @@ public class Main {
 //
 //        int choice;
 //        AggregatorCustomer aggregator = new AggregatorCustomer();
-//        aggregator.getCustomerArrayList().add(Customer.getCustomer());
-//        aggregator.getCustomerArrayList().add(Customer.getCustomer());
-//        aggregator.getCustomerArrayList().add(Customer.getCustomer());
-//        aggregator.getCustomerArrayList().add(Customer.getCustomer());
-//        aggregator.getCustomerArrayList().add(Customer.getCustomer());
 //
-//        aggregator.getCustomerArrayList().get(0).setBankAccountNumber(4356);
-//        aggregator.getCustomerArrayList().get(1).setBankAccountNumber(5321);
-//        aggregator.getCustomerArrayList().get(2).setBankAccountNumber(6321);
-//        aggregator.getCustomerArrayList().get(3).setBankAccountNumber(3251);
-//        aggregator.getCustomerArrayList().get(4).setBankAccountNumber(7251);
+//        Customer customer1 = new Customer("Petrov", "Ivan", "Ivanovich",
+//                "Minsk, Plehanova str. 1", "2345345498458909", 6321);
 //
-//        aggregator.getCustomerArrayList().get(0).setSurname("Petrov");
-//        aggregator.getCustomerArrayList().get(1).setSurname("Ivanov");
-//        aggregator.getCustomerArrayList().get(2).setSurname("Petrovich");
-//        aggregator.getCustomerArrayList().get(3).setSurname("Kobyt");
-//        aggregator.getCustomerArrayList().get(4).setSurname("Kim");
+//        Customer customer2 = new Customer("Ivanov", "Pavel", "Ivanovich",
+//                "Vitebsk, Gazepo str. 23", "3345345498458909", 4356);
 //
-//        aggregator.getCustomerArrayList().get(0).setAddress("Minsk, Plehanova str. 1");
-//        aggregator.getCustomerArrayList().get(1).setAddress("Vitebsk, Gazepo str. 23");
-//        aggregator.getCustomerArrayList().get(2).setAddress("Pinsk, Pobeditelei str. 10");
-//        aggregator.getCustomerArrayList().get(3).setAddress("Minsk, Gastello str, 8");
-//        aggregator.getCustomerArrayList().get(4).setAddress("Grodno, Karla Marksa str, 5");
+//        Customer customer3 = new Customer("Petrov", "Ivan", "Petrovich",
+//                "Pinsk, Pobeditelei str. 10", "4345345498458909", 6321);
 //
-//        aggregator.getCustomerArrayList().get(0).setName("J");
-//        aggregator.getCustomerArrayList().get(1).setName("S");
-//        aggregator.getCustomerArrayList().get(2).setName("B");
-//        aggregator.getCustomerArrayList().get(3).setName("G");
-//        aggregator.getCustomerArrayList().get(4).setName("T");
-//
-//        aggregator.getCustomerArrayList().get(0).setCreditCardNumber("2345345498458909");
-//        aggregator.getCustomerArrayList().get(1).setCreditCardNumber("3345345498458909");
-//        aggregator.getCustomerArrayList().get(2).setCreditCardNumber("4345345498458909");
-//        aggregator.getCustomerArrayList().get(3).setCreditCardNumber("5345345498458909");
-//        aggregator.getCustomerArrayList().get(4).setCreditCardNumber("6345345498458909");
+//        aggregator.getCustomerArrayList().add(customer1);
+//        aggregator.getCustomerArrayList().add(customer2);
+//        aggregator.getCustomerArrayList().add(customer3);
 //
 //        System.out.println("If you wanna sort by surname then press 1, then " +
 //                " press 2 to add some borders");
@@ -309,6 +288,7 @@ public class Main {
 //        switch (choice) {
 //            case (1):
 //                aggregator.show(aggregator.getSort());
+//                aggregator.show(aggregator.getSort2());
 //                break;
 //            case (2):
 //                System.out.println("Please, input min and max border");
@@ -316,65 +296,37 @@ public class Main {
 //                minBorder = in.next();
 //                System.out.print("max border = ");
 //                maxBorder = in.next();
-//                aggregator.show(aggregator.getCardNumberByMaxMinBorders(minBorder, maxBorder));
+//                aggregator.show(aggregator.getCardNumberByBorders(minBorder, maxBorder));
 //        }
 
 //        #9
 //        AggregatorBook aggregatorBook = new AggregatorBook();
 //
-//        aggregatorBook.getBookArrayList().add(Book.getBook());
-//        aggregatorBook.getBookArrayList().add(Book.getBook());
-//        aggregatorBook.getBookArrayList().add(Book.getBook());
-//        aggregatorBook.getBookArrayList().add(Book.getBook());
-//        aggregatorBook.getBookArrayList().add(Book.getBook());
+//        Book book1 = new Book("A Game of Thrones", "Martin",
+//                "PublishingHouse", 1994,
+//                800, 80, TypeOfBookCover.HARDCOVER);
 //
-//        aggregatorBook.getBookArrayList().get(0).setBookName("A Game of Thrones");
-//        aggregatorBook.getBookArrayList().get(1).setBookName("The Sworn Sword");
-//        aggregatorBook.getBookArrayList().get(2).setBookName("Stardust");
-//        aggregatorBook.getBookArrayList().get(3).setBookName("American Gods");
-//        aggregatorBook.getBookArrayList().get(4).setBookName("Alice");
+//        Book book2 = new Book("The Sworn Sword", "Martin",
+//                "Asveta", 2002,
+//                95, 20, TypeOfBookCover.SOFTCOVER);
 //
-//        aggregatorBook.getBookArrayList().get(0).setAuthor("Martin");
-//        aggregatorBook.getBookArrayList().get(1).setAuthor("Martin");
-//        aggregatorBook.getBookArrayList().get(2).setAuthor("Gaiman");
-//        aggregatorBook.getBookArrayList().get(3).setAuthor("Gaiman");
-//        aggregatorBook.getBookArrayList().get(4).setAuthor("Petro");
+//        Book book3 = new Book("Stardust", "Gaiman",
+//                "PublishingHouse", 1998,
+//                150, 40, TypeOfBookCover.HARDCOVER);
 //
-//        aggregatorBook.getBookArrayList().get(0).setPublishingHouse("PublishingHouse");
-//        aggregatorBook.getBookArrayList().get(1).setPublishingHouse("Asveta");
-//        aggregatorBook.getBookArrayList().get(2).setPublishingHouse("PublishingHouse");
-//        aggregatorBook.getBookArrayList().get(3).setPublishingHouse("KoronaExtra");
-//        aggregatorBook.getBookArrayList().get(4).setPublishingHouse("Asveta");
+//        Book book4 = new Book("American Gods", "Gaiman",
+//                "KoronaExtra", 2001,
+//                400, 500, TypeOfBookCover.SOFTCOVER);
 //
-//        aggregatorBook.getBookArrayList().get(0).setPublishingYear((short) 1994);
-//        aggregatorBook.getBookArrayList().get(1).setPublishingYear((short) 2002);
-//        aggregatorBook.getBookArrayList().get(2).setPublishingYear((short) 1998);
-//        aggregatorBook.getBookArrayList().get(3).setPublishingYear((short) 2001);
-//        aggregatorBook.getBookArrayList().get(4).setPublishingYear((short) 2010);
+//        Book book5 = new Book("Alice", "Petro",
+//                "Asveta", 2001,
+//                100, 150, TypeOfBookCover.HARDCOVER);
 //
-//        aggregatorBook.getBookArrayList().get(0).setPageAmount((short) 800);
-//        aggregatorBook.getBookArrayList().get(1).setPageAmount((short) 95);
-//        aggregatorBook.getBookArrayList().get(2).setPageAmount((short) 150);
-//        aggregatorBook.getBookArrayList().get(3).setPageAmount((short) 400);
-//        aggregatorBook.getBookArrayList().get(4).setPageAmount((short) 40);
-//
-//        aggregatorBook.getBookArrayList().get(0).setPrice((short) 40);
-//        aggregatorBook.getBookArrayList().get(1).setPrice((short) 20);
-//        aggregatorBook.getBookArrayList().get(2).setPrice((short) 65);
-//        aggregatorBook.getBookArrayList().get(3).setPrice((short) 500);
-//        aggregatorBook.getBookArrayList().get(4).setPrice((short) 10);
-//
-//        aggregatorBook.getBookArrayList().get(0).setPrice((short) 40);
-//        aggregatorBook.getBookArrayList().get(1).setPrice((short) 20);
-//        aggregatorBook.getBookArrayList().get(2).setPrice((short) 55);
-//        aggregatorBook.getBookArrayList().get(3).setPrice((short) 200);
-//        aggregatorBook.getBookArrayList().get(4).setPrice((short) 100);
-//
-//        aggregatorBook.getBookArrayList().get(0).setCoverType("A");
-//        aggregatorBook.getBookArrayList().get(1).setCoverType("B");
-//        aggregatorBook.getBookArrayList().get(2).setCoverType("A");
-//        aggregatorBook.getBookArrayList().get(3).setCoverType("B");
-//        aggregatorBook.getBookArrayList().get(4).setCoverType("A");
+//        aggregatorBook.getBookArrayList().add(book1);
+//        aggregatorBook.getBookArrayList().add(book2);
+//        aggregatorBook.getBookArrayList().add(book3);
+//        aggregatorBook.getBookArrayList().add(book4);
+//        aggregatorBook.getBookArrayList().add(book5);
 //
 //        System.out.println("If you wanna see books wrote by definite author then press 1");
 //        System.out.println("If you wanna see books published by definite publish house then press 2");
@@ -411,41 +363,22 @@ public class Main {
 //
 //        AggregatorAirline aggregatorAirline = new AggregatorAirline();
 //
-//        aggregatorAirline.airlineArrayList.add(Airline.getAirline());
-//        aggregatorAirline.airlineArrayList.add(Airline.getAirline());
-//        aggregatorAirline.airlineArrayList.add(Airline.getAirline());
-//        aggregatorAirline.airlineArrayList.add(Airline.getAirline());
-//        aggregatorAirline.airlineArrayList.add(Airline.getAirline());
+//        Airline airline1 = new Airline("Egypt", "1DF32",
+//                "Jet", "10:00", DayOfWeek.MONDAY);
 //
-//        aggregatorAirline.airlineArrayList.get(0).setDestination("Egypt");
-//        aggregatorAirline.airlineArrayList.get(1).setDestination("Moscow");
-//        aggregatorAirline.airlineArrayList.get(2).setDestination("Minsk");
-//        aggregatorAirline.airlineArrayList.get(3).setDestination("Turkey");
-//        aggregatorAirline.airlineArrayList.get(4).setDestination("Egypt");
+//        Airline airline2 = new Airline("Moscow", "34DF2",
+//                "Boeing", "11:30", DayOfWeek.SUNDAY);
 //
-//        aggregatorAirline.airlineArrayList.get(0).setDayOfWeek("Monday");
-//        aggregatorAirline.airlineArrayList.get(1).setDayOfWeek("Sunday");
-//        aggregatorAirline.airlineArrayList.get(2).setDayOfWeek("Monday");
-//        aggregatorAirline.airlineArrayList.get(3).setDayOfWeek("Sunday");
-//        aggregatorAirline.airlineArrayList.get(4).setDayOfWeek("Monday");
+//        Airline airline3 = new Airline("Minsk", "3BG17",
+//                "Jet", "22:15", DayOfWeek.MONDAY);
 //
-//        aggregatorAirline.airlineArrayList.get(0).setArplaneType("Jet");
-//        aggregatorAirline.airlineArrayList.get(1).setArplaneType("Jet");
-//        aggregatorAirline.airlineArrayList.get(2).setArplaneType("Boing");
-//        aggregatorAirline.airlineArrayList.get(3).setArplaneType("Boing");
-//        aggregatorAirline.airlineArrayList.get(4).setArplaneType("Boing");
+//        Airline airline4 = new Airline("Turkey", "2ER88",
+//                "Boeing", "17:10", DayOfWeek.SUNDAY);
 //
-//        aggregatorAirline.airlineArrayList.get(0).setFlightNumber("1DF32");
-//        aggregatorAirline.airlineArrayList.get(1).setFlightNumber("34DF2");
-//        aggregatorAirline.airlineArrayList.get(2).setFlightNumber("3BG17");
-//        aggregatorAirline.airlineArrayList.get(3).setFlightNumber("2ER88");
-//        aggregatorAirline.airlineArrayList.get(4).setFlightNumber("8AF22");
-//
-//        aggregatorAirline.airlineArrayList.get(0).setArrivingTime("10:00");
-//        aggregatorAirline.airlineArrayList.get(1).setArrivingTime("11:30");
-//        aggregatorAirline.airlineArrayList.get(2).setArrivingTime("22:15");
-//        aggregatorAirline.airlineArrayList.get(3).setArrivingTime("11:15");
-//        aggregatorAirline.airlineArrayList.get(4).setArrivingTime("13:45");
+//        aggregatorAirline.getAirlineArrayList().add(airline1);
+//        aggregatorAirline.getAirlineArrayList().add(airline2);
+//        aggregatorAirline.getAirlineArrayList().add(airline3);
+//        aggregatorAirline.getAirlineArrayList().add(airline4);
 //
 //        System.out.println("If you wanna see flight number using destination press 1");
 //        System.out.println("If you wanna see flights using day of week then press 2");
@@ -462,13 +395,15 @@ public class Main {
 //                System.out.println("Please, input destination");
 //                System.out.print("destination = ");
 //                destination = in.next();
-//                aggregatorAirline.showFlightNumberUseDestination(destination);
+//                aggregatorAirline.showFlightNumber(aggregatorAirline
+//                        .getFlightNumberByDestination(destination, aggregatorAirline.getAirlineArrayList()));
 //                break;
 //            case (2):
 //                System.out.println("Please, input day of week");
 //                System.out.print("day of week = ");
 //                dayOfWeek = in.next();
-//                aggregatorAirline.showFlightNumeberUseDayOfWeek(dayOfWeek);
+//                aggregatorAirline.showFlightNumber(aggregatorAirline
+//                        .getFlightNumberByDayOfWeek(dayOfWeek, aggregatorAirline.getAirlineArrayList()));
 //                break;
 //            case (3):
 //                System.out.println("Please, input day of week");
@@ -477,83 +412,193 @@ public class Main {
 //                System.out.println("Please, input time");
 //                System.out.print("time = ");
 //                time = in.next();
-//                aggregatorAirline.showFlightNumeberUseDayOfWeek(dayOfWeek, time);
+//                aggregatorAirline.showFlightNumber(aggregatorAirline
+//                        .getFlightNumberByDayOfWeek(dayOfWeek,
+//                                aggregatorAirline.getFlightNumberByTimeOfArriving(time,
+//                                        aggregatorAirline.getAirlineArrayList())));
 //                break;
 //        }
 
+
 //        #1
 //
-        Text text = new Text("My lovely diary");
-        Sentence sentence1 = new Sentence("Thank you");
-        Word word1 = new Word("Hello");
-//        word1.setWord("Hello");
-        sentence1.addWord(word1);
-//        text.addSentence(sentence1);
-
-        Word word2 = new Word("friends");
-//        word2.setWord("friends");
-        sentence1.addWord(word2);
-        text.addSentence(sentence1);
-
-        Word word3 = new Word("Greetings");
-//        word3.setWord();
-        Sentence sentence2 = new Sentence("My lord");
-        sentence2.addWord(word3);
-        text.addHeading(sentence2);
-
-
-        sentence1.addToSentence(sentence1.getWordArray());
-
+//        Word word1 = new Word("Hello");
+//        Sentence sentence1 = new Sentence(word1);
 //
-//        text.showText();
+//        Word word2 = new Word("friends");
+//        sentence1.addWord(word2);
+//        Text text = new Text(sentence1);
+//        Word word3 = new Word("Greetings");
+//
+//        Sentence sentence2 = new Sentence(word3);
+//
+//        text.addHeading(sentence2);
+//
+//        System.out.println(text.getTextArray());
+//
+//        System.out.println(sentence1.getWordArray());
+//        System.out.println(sentence2.getWordArray());
+//        System.out.println("");
+//        sentence1.showArrayOfWords();
+//        sentence2.showArrayOfWords();
+
 
 //        #2
 //
-//        Car car = new Car();
-//        car.changeWheel((byte) 1);
-//        car.move();
-//        car.refuel((short)10);
-//        System.out.println(car.getCarBrand());
+//        Engine engine = new Engine(150, 9);
+//        Wheel wheel1 = new Wheel(25, "Winter");
+//        Wheel wheel2 = new Wheel(25, "Winter");
+//        Wheel wheel3 = new Wheel(30, "Winter");
+//        Wheel wheel4 = new Wheel(30, "Winter");
+//        Car car = new Car (engine, 70, "BMW", wheel1, wheel2, wheel3, wheel4);
+//        car.carRefuel(50);
+//        System.out.println(car.getCurrentFuelAmount());
+//        car.move(100);
+//        car.getEngine().startEngine();
+//        car.move(100);
+//        System.out.println(car.getCurrentFuelAmount());
+//        Wheel wheel5 = new Wheel(25, "Summer");
+//        car.changeWheel(2, wheel5);
+//        car.showCarBrand();
 
 //        #3
-//        State state = new State();
-//        state.findCapital();
-//        System.out.println(state.findAllRegionSquare());
-//        System.out.println(Region.regionAmount());
-//        state.findRegionalCenter();
+//
+//        City cityMinsk = new City("Minsk", 2000, true);
+//        City cityGrodno = new City("Grodno", 500);
+//        City cityBrest = new City("Brest", 800);
+//        District districtMinsk = new District("", 2000, cityMinsk);
+//        District districtKrupskij = new District("Krupskij", 5000);
+//        District districtBerezinskij = new District("Berezinskij", 7000);
+//        District districtOshmianskij = new District("Oshmianskij", 3000);
+//        District districtSlonimskij = new District("Slonimskij", 3400);
+//        District districtPinskij = new District("Pinskij", 8000);
+//        District districtStolinskij = new District("Stolinskij", 7000);
+//        Region regionMinskaja = new Region("Minskaja", 50000);
+//        Region regionGrodnenskaja = new Region("Grodnenskaja", 40000, true);
+//        Region regionBrestskaja = new Region("Brestskaja", 30000, true);
+//        State stateBelarus = new State("Belarus", 20000000);
+//
+//        districtOshmianskij.addCity(cityGrodno);
+//        districtSlonimskij.addCity(cityBrest);
+//
+//        regionMinskaja.addDistrict(districtMinsk);
+//        regionMinskaja.addDistrict(districtKrupskij);
+//        regionMinskaja.addDistrict(districtBerezinskij);
+//        regionGrodnenskaja.addDistrict(districtOshmianskij);
+//        regionGrodnenskaja.addDistrict(districtSlonimskij);
+//        regionBrestskaja.addDistrict(districtPinskij);
+//        regionBrestskaja.addDistrict(districtStolinskij);
+//
+//        stateBelarus.addRegion(regionBrestskaja);
+//        stateBelarus.addRegion(regionMinskaja);
+//        stateBelarus.addRegion(regionGrodnenskaja);
+//
+//        System.out.println("There are " + stateBelarus.getAmountOfRegions() + " regions");
+//
+//        stateBelarus.showRegionalCenters(stateBelarus.getRegionalCenters());
+//
+//        stateBelarus.findCapital();
+//
+//        System.out.println("Square = " + stateBelarus.getAllRegionsSquare());
+
 
 //        #4
-//        Client client = new Client();
+//        Client client1 = new Client("Ivanov", "Ivan");
+//        Client client2 = new Client("Petrov", "Petr");
 //
-//        client.addAccount();
-//        client.addAccount();
-//        client.addAccount();
-//
-//        client.getAccountArrayList().get(0).setBlock(true);
-//        client.getAccountArrayList().get(1).setBlock(false);
-//        client.getAccountArrayList().get(2).setBlock(false);
-//        client.getAccountArrayList().get(3).setBlock(false);
-//
-//        client.getAccountArrayList().get(0).setMoneyAmount(-100);
-//        client.getAccountArrayList().get(1).setMoneyAmount(20);
-//        client.getAccountArrayList().get(2).setMoneyAmount(-500);
-//        client.getAccountArrayList().get(3).setMoneyAmount(10000);
-//
-//        System.out.println(client.getPositiveAccountMoney());
-//        System.out.println(client.getNegativeAccountMoney());
-//        System.out.println(client.getAllAccountMoney());
-//
-//        System.out.println(client.getAccountArrayList().get(2).getStringByIndex());
-//
-//        System.out.println(client.findAccount(2));
-//
-//        System.out.println("Before sort");
-//        System.out.println("---------------------");
-//        client.show();
-//        System.out.println();
-//        System.out.println("After sort");
-//        System.out.println("---------------------");
-//        client.sort();
-//        client.show();
+//        Account account1 = new Account(100);
+//        client1.addAccount(account1);
+//        client1.addMoney(1, 50);
+//        client1.takeOffMoney(1, 500);
+//        account1.setAccountBlocked();
+//        client1.takeOffMoney(1, 1500);
+//        System.out.println(client1.getAllAccountMoney());
+
+
+        //#5
+
+        TypeOfTravelVoucher type = TypeOfTravelVoucher.RELAXATION;
+        System.out.println(TypeOfTravelVoucher.RELAXATION.getTypeOfTravelVoucher());
+        TravelVoucher travelVoucher1 = new TravelVoucher(9, 100,
+                TypeOfTravelVoucher.RELAXATION, TypeOfTransport.PLAIN, TypeOfMeal.ALL_INCLUSIVE);
+        TravelVoucher travelVoucher2 = new TravelVoucher(5, 50,
+                TypeOfTravelVoucher.SHOPPING, TypeOfTransport.BUS, TypeOfMeal.BREAKFAST);
+        TravelVoucher travelVoucher3 = new TravelVoucher(8, 80,
+                TypeOfTravelVoucher.EXCURSION, TypeOfTransport.CAR, TypeOfMeal.DINNER);
+        ArrayList<TravelVoucher> travelVoucherArrayList = new ArrayList<>();
+        travelVoucherArrayList.add(travelVoucher1);
+        travelVoucherArrayList.add(travelVoucher2);
+        travelVoucherArrayList.add(travelVoucher3);
+        AggregatorTravelVoucher aggregatorTravelVoucher = new AggregatorTravelVoucher();
+        aggregatorTravelVoucher.addTravelVoucher(travelVoucher1);
+        aggregatorTravelVoucher.addTravelVoucher(travelVoucher2);
+        aggregatorTravelVoucher.addTravelVoucher(travelVoucher3);
+        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherArrayList());
+        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getSort());
+
+        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherByType("shopping"));
+
+        System.out.println("Please, choose amount of days");
+        Scanner in = new Scanner(System.in);
+        int amountOfDays = in.nextInt();
+
+        System.out.println("Please, choose price for a day");
+        in = new Scanner(System.in);
+        int dayPrice = in.nextInt();
+
+        System.out.println("Please, choose type of voucher");
+        String typeOfVoucher = "";
+        TypeOfTravelVoucher typeVoucher = null;
+        in = new Scanner(System.in);
+        String choice2 = in.next();
+        switch (choice2) {
+            case "shopping":
+                typeVoucher = TypeOfTravelVoucher.SHOPPING;
+                System.out.println("d");
+                break;
+            case "excursion":
+                typeVoucher = TypeOfTravelVoucher.EXCURSION;
+                break;
+            case "relaxation":
+                typeVoucher = TypeOfTravelVoucher.RELAXATION;
+                break;
+        }
+
+        System.out.println("Please, choose type of transport");
+        TypeOfTransport typeTransport = null;
+        in = new Scanner(System.in);
+        choice2 = in.next();
+        switch (choice2) {
+            case "plain":
+                typeTransport = TypeOfTransport.PLAIN;
+                break;
+            case "car":
+                typeTransport = TypeOfTransport.CAR;
+                break;
+            case "bus":
+                typeTransport = TypeOfTransport.BUS;
+                break;
+        }
+
+        System.out.println("Please, choose type of meal");
+        TypeOfMeal typeMeal = null;
+        in = new Scanner(System.in);
+        choice2 = in.next();
+        switch (choice2) {
+            case "breakfast":
+                typeMeal = TypeOfMeal.BREAKFAST;
+                break;
+            case "dinner":
+                typeMeal = TypeOfMeal.DINNER;
+                break;
+            case "all inclusive":
+                typeMeal = TypeOfMeal.ALL_INCLUSIVE;
+                break;
+        }
+
+        aggregatorTravelVoucher.show(aggregatorTravelVoucher
+                .getTravelVoucherByChoice(amountOfDays, dayPrice, typeVoucher, typeTransport, typeMeal));
+
+
     }
 }

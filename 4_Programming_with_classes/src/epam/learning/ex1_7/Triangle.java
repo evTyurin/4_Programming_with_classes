@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_7;
 
 public class Triangle {
     private double ab;

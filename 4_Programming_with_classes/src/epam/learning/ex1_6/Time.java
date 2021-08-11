@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_6;
 
 public class Time {
     private short second;

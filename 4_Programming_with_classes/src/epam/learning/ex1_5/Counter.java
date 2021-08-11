@@ -1,4 +1,4 @@
-package epam.learning;
+package epam.learning.ex1_5;
 
 public class Counter {
     private short minNumber;
@@ -64,4 +64,6 @@ public class Counter {
     public void show () {
         System.out.println("Your number = " + number);
     }
+
+
 }

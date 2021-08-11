@@ -1,11 +1,16 @@
-package epam.learning;
+package epam.learning.ex2_2;
 
 public class Wheel {
 
-    private byte inchDiameter;
+    private int inchDiameter;
     private String season;
 
-    public void setInchDiameter(byte inchDiameter) {
+    public Wheel (int inchDiameter, String season) {
+        this.inchDiameter = inchDiameter;
+        this.season = season;
+    }
+
+    public void setInchDiameter(int inchDiameter) {
         this.inchDiameter = inchDiameter;
     }
 
@@ -13,7 +18,7 @@ public class Wheel {
         this.season = season;
     }
 
-    public byte getInchDiameter() {
+    public int getInchDiameter() {
         return inchDiameter;
     }
 
@@ -21,7 +26,5 @@ public class Wheel {
         return season;
     }
 
-    public Wheel getWheel () {
-        return new Wheel();
-    }
+
 }

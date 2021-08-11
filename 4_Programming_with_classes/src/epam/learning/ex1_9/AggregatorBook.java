@@ -1,10 +1,14 @@
-package epam.learning;
+package epam.learning.ex1_9;
 
 import java.util.ArrayList;
 
 public class AggregatorBook{
 
-    private ArrayList<Book> bookArrayList = new ArrayList<Book>();
+    private ArrayList<Book> bookArrayList;
+
+    public AggregatorBook () {
+        bookArrayList = new ArrayList<Book>();
+    }
 
     public ArrayList<Book> getBookArrayList() {
         return bookArrayList;
@@ -14,11 +18,10 @@ public class AggregatorBook{
         this.bookArrayList = bookArrayList;
     }
 
-    //TODO
     public ArrayList<Book> getBookByAuthor (String author) {
         ArrayList<Book> innerBookArrayList = new ArrayList<Book>();
         for (int i = 0; i < bookArrayList.size(); i++) {
-            if (bookArrayList.get(i).getAuthor().equals(author)) {
+            if (bookArrayList.get(i).getBookAuthor().equals(author)) {
                 innerBookArrayList.add(bookArrayList.get(i));
             }
         }
