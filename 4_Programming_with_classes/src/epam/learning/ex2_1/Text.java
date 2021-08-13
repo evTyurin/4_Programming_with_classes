@@ -3,16 +3,24 @@ package epam.learning.ex2_1;
 import java.util.ArrayList;
 
 public class Text {
-    //TODO из строки текст сделать массив предложений (которые должны быть разбиты на массив слов) и сделать это в конструкторе
+
     private ArrayList<Sentence> sentenceArrayList;
+
+    public Text () {
+        sentenceArrayList = new ArrayList<>();
+    }
 
     public Text (Sentence sentence) {
         this();
         sentenceArrayList.add(sentence);
     }
 
-    public Text () {
-        sentenceArrayList = new ArrayList<>();
+    public Text (String text) {
+        this();
+        String[] sentences = text.split("[.!?]");
+        for (String sentence : sentences) {
+            sentenceArrayList.add(new Sentence(sentence.trim()));
+        }
     }
 
     public ArrayList<Sentence> getSentenceArrayList() {
@@ -44,6 +52,12 @@ public class Text {
         for (Sentence sentence: sentenceArrayList
         ) {
             System.out.println(sentence.getWordArray());
+        }
+    }
+
+    public void showElementsOfSentenceArray () {
+        for (Sentence sentence: sentenceArrayList) {
+            sentence.showElementsOfWordArray();
         }
     }
 

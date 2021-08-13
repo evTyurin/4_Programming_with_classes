@@ -9,9 +9,9 @@ public enum DayOfWeek {
     SATURDAY ("Saturday"),
     SUNDAY ("Sunday");
 
-    public String dayOfWeek;
+    private final String dayOfWeek;
 
-    private DayOfWeek (String dayOfWeek) {
+    DayOfWeek (String dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
 

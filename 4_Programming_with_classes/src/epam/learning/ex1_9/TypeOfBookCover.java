@@ -4,9 +4,9 @@ public enum TypeOfBookCover {
     SOFTCOVER ("SoftCover"),
     HARDCOVER ("HardCover");
 
-    public String typeOfBookCover;
+    private final String typeOfBookCover;
 
-    private TypeOfBookCover (String typeOfMeal) {
+    TypeOfBookCover (String typeOfMeal) {
         this.typeOfBookCover = typeOfMeal;
     }
 

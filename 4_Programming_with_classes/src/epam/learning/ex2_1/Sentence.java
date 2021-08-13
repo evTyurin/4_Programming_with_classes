@@ -6,13 +6,21 @@ public class Sentence {
 
     private ArrayList<Word> wordArrayList;
 
+    public Sentence (){
+        wordArrayList = new ArrayList<>();
+    }
+
     public Sentence (Word word){
         this();
         wordArrayList.add(word);
     }
-    //TODO из строки sentence сделать массив слов (разбить) и сделать это в конструкторе
-    public Sentence (){
-        wordArrayList = new ArrayList<>();
+
+    public Sentence (String sentence){
+        this();
+        String[] words = sentence.split("\\s");
+        for (String word : words) {
+            wordArrayList.add(new Word(word));
+        }
     }
 
     public ArrayList<Word> getWordArrayList() {
@@ -42,7 +50,7 @@ public class Sentence {
         return string.toString();
     }
 
-    public void showArrayOfWords () {
+    public void showElementsOfWordArray() {
         for (Word word: wordArrayList
         ) {
             System.out.println(word.getWord());

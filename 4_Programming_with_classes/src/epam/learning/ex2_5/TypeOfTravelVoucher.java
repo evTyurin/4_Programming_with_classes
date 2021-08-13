@@ -1,21 +1,26 @@
 package epam.learning.ex2_5;
 
 public enum TypeOfTravelVoucher {
-    RELAXATION ("relaxation"),
-    EXCURSION ("excursion"),
-    TREATMENT ("treatment"),
-    SHOPPING ("shopping"),
-    CRUISE ("cruise");
+    RELAXATION ("relaxation", 120),
+    EXCURSION ("excursion", 80),
+    TREATMENT ("treatment", 150),
+    SHOPPING ("shopping", 20),
+    CRUISE ("cruise", 100);
 
-    //TODO геттеры и приватный модификатор
+    private final String type;
+    private final int pricePerDay;
 
-    public String typeOfTravelVoucher;
-
-    private TypeOfTravelVoucher (String typeOfTravelVoucher) {
-        this.typeOfTravelVoucher = typeOfTravelVoucher;
+    TypeOfTravelVoucher (String type, int pricePerDay) {
+        this.type = type;
+        this.pricePerDay = pricePerDay;
     }
 
-    public String  getTypeOfTravelVoucher () {
-        return typeOfTravelVoucher;
+    public String getType() {
+        return type;
     }
+
+    public int getPricePerDay() {
+        return pricePerDay;
+    }
+
 }

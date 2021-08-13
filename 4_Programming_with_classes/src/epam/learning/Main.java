@@ -1,9 +1,8 @@
 package epam.learning;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import epam.learning.ex2_5.*;
+import epam.learning.ex2_1.Sentence;
+import epam.learning.ex2_1.Text;
+import epam.learning.ex2_1.Word;
 
 public class Main {
 
@@ -422,26 +421,30 @@ public class Main {
 
 //        #1
 //
-//        Word word1 = new Word("Hello");
-//        Sentence sentence1 = new Sentence(word1);
-//
-//        Word word2 = new Word("friends");
-//        sentence1.addWord(word2);
-//        Text text = new Text(sentence1);
-//        Word word3 = new Word("Greetings");
-//
-//        Sentence sentence2 = new Sentence(word3);
-//
-//        text.addHeading(sentence2);
-//
-//        System.out.println(text.getTextArray());
-//
-//        System.out.println(sentence1.getWordArray());
-//        System.out.println(sentence2.getWordArray());
-//        System.out.println("");
-//        sentence1.showArrayOfWords();
-//        sentence2.showArrayOfWords();
+        Word word1 = new Word("Hello");
+        Sentence sentence1 = new Sentence(word1);
 
+        Word word2 = new Word("friends");
+        sentence1.addWord(word2);
+        Text text = new Text(sentence1);
+        Word word3 = new Word("Greetings");
+
+        Sentence sentence2 = new Sentence(word3);
+
+        text.addHeading(sentence2);
+
+        System.out.println(text.getTextArray());
+
+        System.out.println(sentence1.getWordArray());
+        System.out.println(sentence2.getWordArray());
+        System.out.println("");
+        sentence1.showElementsOfWordArray();
+        sentence2.showElementsOfWordArray();
+
+        System.out.println("-----------------");
+
+        Text text2 = new Text("Hello limbo liloli loli friend!\n\tI live in Minsk. Belarus. Serebronx motherfucker!\n\tI like it! Very much!");
+        text2.showElementsOfSentenceArray();
 
 //        #2
 //
@@ -516,88 +519,99 @@ public class Main {
 
 
         //#5
-
-        TypeOfTravelVoucher type = TypeOfTravelVoucher.RELAXATION;
-        System.out.println(TypeOfTravelVoucher.RELAXATION.getTypeOfTravelVoucher());
-        TravelVoucher travelVoucher1 = new TravelVoucher(9, 100,
-                TypeOfTravelVoucher.RELAXATION, TypeOfTransport.PLAIN, TypeOfMeal.ALL_INCLUSIVE);
-        TravelVoucher travelVoucher2 = new TravelVoucher(5, 50,
-                TypeOfTravelVoucher.SHOPPING, TypeOfTransport.BUS, TypeOfMeal.BREAKFAST);
-        TravelVoucher travelVoucher3 = new TravelVoucher(8, 80,
-                TypeOfTravelVoucher.EXCURSION, TypeOfTransport.CAR, TypeOfMeal.DINNER);
-        ArrayList<TravelVoucher> travelVoucherArrayList = new ArrayList<>();
-        travelVoucherArrayList.add(travelVoucher1);
-        travelVoucherArrayList.add(travelVoucher2);
-        travelVoucherArrayList.add(travelVoucher3);
-        AggregatorTravelVoucher aggregatorTravelVoucher = new AggregatorTravelVoucher();
-        aggregatorTravelVoucher.addTravelVoucher(travelVoucher1);
-        aggregatorTravelVoucher.addTravelVoucher(travelVoucher2);
-        aggregatorTravelVoucher.addTravelVoucher(travelVoucher3);
-        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherArrayList());
-        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getSort());
-
-        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherByType("shopping"));
-
-        System.out.println("Please, choose amount of days");
-        Scanner in = new Scanner(System.in);
-        int amountOfDays = in.nextInt();
-
-        System.out.println("Please, choose price for a day");
-        in = new Scanner(System.in);
-        int dayPrice = in.nextInt();
-
-        System.out.println("Please, choose type of voucher");
-        String typeOfVoucher = "";
-        TypeOfTravelVoucher typeVoucher = null;
-        in = new Scanner(System.in);
-        String choice2 = in.next();
-        switch (choice2) {
-            case "shopping":
-                typeVoucher = TypeOfTravelVoucher.SHOPPING;
-                System.out.println("d");
-                break;
-            case "excursion":
-                typeVoucher = TypeOfTravelVoucher.EXCURSION;
-                break;
-            case "relaxation":
-                typeVoucher = TypeOfTravelVoucher.RELAXATION;
-                break;
-        }
-
-        System.out.println("Please, choose type of transport");
-        TypeOfTransport typeTransport = null;
-        in = new Scanner(System.in);
-        choice2 = in.next();
-        switch (choice2) {
-            case "plain":
-                typeTransport = TypeOfTransport.PLAIN;
-                break;
-            case "car":
-                typeTransport = TypeOfTransport.CAR;
-                break;
-            case "bus":
-                typeTransport = TypeOfTransport.BUS;
-                break;
-        }
-
-        System.out.println("Please, choose type of meal");
-        TypeOfMeal typeMeal = null;
-        in = new Scanner(System.in);
-        choice2 = in.next();
-        switch (choice2) {
-            case "breakfast":
-                typeMeal = TypeOfMeal.BREAKFAST;
-                break;
-            case "dinner":
-                typeMeal = TypeOfMeal.DINNER;
-                break;
-            case "all inclusive":
-                typeMeal = TypeOfMeal.ALL_INCLUSIVE;
-                break;
-        }
-
-        aggregatorTravelVoucher.show(aggregatorTravelVoucher
-                .getTravelVoucherByChoice(amountOfDays, dayPrice, typeVoucher, typeTransport, typeMeal));
+//
+//        TypeOfTravelVoucher type = TypeOfTravelVoucher.RELAXATION;
+//        System.out.println(TypeOfTravelVoucher.RELAXATION.getType());
+//        TravelVoucher travelVoucher1 = new TravelVoucher(9,
+//                TypeOfTravelVoucher.RELAXATION, TypeOfTransport.PLAIN, TypeOfMeal.ALL_INCLUSIVE);
+//        TravelVoucher travelVoucher2 = new TravelVoucher(5,
+//                TypeOfTravelVoucher.SHOPPING, TypeOfTransport.BUS, TypeOfMeal.BREAKFAST);
+//        TravelVoucher travelVoucher3 = new TravelVoucher(8,
+//                TypeOfTravelVoucher.EXCURSION, TypeOfTransport.CAR, TypeOfMeal.DINNER);
+//        ArrayList<TravelVoucher> travelVoucherArrayList = new ArrayList<>();
+//        travelVoucherArrayList.add(travelVoucher1);
+//        travelVoucherArrayList.add(travelVoucher2);
+//        travelVoucherArrayList.add(travelVoucher3);
+//        AggregatorTravelVoucher aggregatorTravelVoucher = new AggregatorTravelVoucher();
+//        aggregatorTravelVoucher.addTravelVoucher(travelVoucher1);
+//        aggregatorTravelVoucher.addTravelVoucher(travelVoucher2);
+//        aggregatorTravelVoucher.addTravelVoucher(travelVoucher3);
+//        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherArrayList());
+//        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getSort());
+//
+//        aggregatorTravelVoucher.show(aggregatorTravelVoucher.getTravelVoucherByType("shopping"));
+//
+//        System.out.println("Please, choose amount of days");
+//        Scanner in = new Scanner(System.in);
+//        int amountOfDays = in.nextInt();
+//
+//        System.out.println("Please, choose type of voucher");
+//        String typeOfVoucher = "";
+//        TypeOfTravelVoucher typeVoucher = null;
+//        in = new Scanner(System.in);
+//        String choice2 = in.next();
+//        switch (choice2) {
+//            case "shopping":
+//                typeVoucher = TypeOfTravelVoucher.SHOPPING;
+//                System.out.println("d");
+//                break;
+//            case "excursion":
+//                typeVoucher = TypeOfTravelVoucher.EXCURSION;
+//                break;
+//            case "relaxation":
+//                typeVoucher = TypeOfTravelVoucher.RELAXATION;
+//                break;
+//            case "cruise":
+//                typeVoucher = TypeOfTravelVoucher.CRUISE;
+//                break;
+//            case "treatment":
+//                typeVoucher = TypeOfTravelVoucher.TREATMENT;
+//                break;
+//        }
+//
+//        System.out.println("Please, choose type of transport");
+//        TypeOfTransport typeTransport = null;
+//        in = new Scanner(System.in);
+//        choice2 = in.next();
+//        switch (choice2) {
+//            case "plain":
+//                typeTransport = TypeOfTransport.PLAIN;
+//                break;
+//            case "car":
+//                typeTransport = TypeOfTransport.CAR;
+//                break;
+//            case "bus":
+//                typeTransport = TypeOfTransport.BUS;
+//                break;
+//            case "train":
+//                typeTransport = TypeOfTransport.TRAIN;
+//                break;
+//            case "ship":
+//                typeTransport = TypeOfTransport.SHIP;
+//                break;
+//        }
+//
+//        System.out.println("Please, choose type of meal");
+//        TypeOfMeal typeMeal = null;
+//        in = new Scanner(System.in);
+//        choice2 = in.next();
+//        switch (choice2) {
+//            case "breakfast":
+//                typeMeal = TypeOfMeal.BREAKFAST;
+//                break;
+//            case "dinner":
+//                typeMeal = TypeOfMeal.DINNER;
+//                break;
+//            case "supper":
+//                typeMeal = TypeOfMeal.SUPPER;
+//                break;
+//            case "all inclusive":
+//                typeMeal = TypeOfMeal.ALL_INCLUSIVE;
+//                break;
+//        }
+//
+//        aggregatorTravelVoucher.show(aggregatorTravelVoucher
+//                .getTravelVoucherByChoice(amountOfDays, typeVoucher, typeTransport, typeMeal));
 
 
     }

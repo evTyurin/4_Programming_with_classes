@@ -1,19 +1,10 @@
 package epam.learning.ex2_5;
 
 public class TravelVoucher implements Comparable<TravelVoucher>{
-    private int priceByDay;
     private int amountOfDays;
     private TypeOfTransport transportType;
     private TypeOfTravelVoucher travelVoucherType;
     private TypeOfMeal mealType;
-
-    public int getPriceByDay() {
-        return priceByDay;
-    }
-
-    public void setPriceByDay(int priceByDay) {
-        this.priceByDay = priceByDay;
-    }
 
     public int getAmountOfDays() {
         return amountOfDays;
@@ -47,16 +38,19 @@ public class TravelVoucher implements Comparable<TravelVoucher>{
         this.mealType = mealType;
     }
 
-    public TravelVoucher (int amountOfDays, int priceByDay,
-                          TypeOfTravelVoucher travelVoucherType,
+    public TravelVoucher (int amountOfDays, TypeOfTravelVoucher travelVoucherType,
                           TypeOfTransport transportType, TypeOfMeal mealType) {
         this.amountOfDays = amountOfDays;
-        this.priceByDay = priceByDay;
         this.travelVoucherType = travelVoucherType;
         this.transportType = transportType;
         this.mealType = mealType;
     }
 
+    public int getTotalPrice () {
+        return transportType.getPricePerTransfer()*2 +
+                amountOfDays * travelVoucherType.getPricePerDay() +
+                amountOfDays * mealType.getPricePerDay();
+    }
 
 
     @Override

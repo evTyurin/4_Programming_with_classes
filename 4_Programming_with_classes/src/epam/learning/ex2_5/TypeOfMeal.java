@@ -1,18 +1,25 @@
 package epam.learning.ex2_5;
 
 public enum TypeOfMeal {
-    BREAKFAST("breakfast"),
-    DINNER("dinner"),
-    SUPPER("supper"),
-    ALL_INCLUSIVE("all inclusive");
+    BREAKFAST("breakfast", 5),
+    DINNER("dinner", 10),
+    SUPPER("supper", 10),
+    ALL_INCLUSIVE("all inclusive", 40);
 
-    public String typeOfMeal;
+    private final String type;
+    private final int pricePerDay;
 
-    private TypeOfMeal (String typeOfMeal) {
-        this.typeOfMeal = typeOfMeal;
+
+    TypeOfMeal (String type, int pricePerDay) {
+        this.type = type;
+        this.pricePerDay = pricePerDay;
     }
 
-    public String getTypeOfMeal () {
-        return typeOfMeal;
+    public String getType() {
+        return type;
+    }
+
+    public int getPricePerDay() {
+        return pricePerDay;
     }
 }

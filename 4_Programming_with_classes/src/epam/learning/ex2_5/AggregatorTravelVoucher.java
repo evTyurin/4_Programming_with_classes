@@ -38,22 +38,20 @@ public class AggregatorTravelVoucher {
     public void show(ArrayList<TravelVoucher> travelVoucherArrayList) {
         String str;
         for (int i = 0; i < travelVoucherArrayList.size(); i++) {
-            str = "priceByDay = " + travelVoucherArrayList.get(i).getPriceByDay() +
-                    " amountOfDays = " + travelVoucherArrayList.get(i).getAmountOfDays() +
-                    " transportType = " + travelVoucherArrayList.get(i).getTransportType().getTypeOfTransport() +
-                    " travelVoucherType = " + travelVoucherArrayList.get(i).getTravelVoucherType().getTypeOfTravelVoucher() +
-                    " mealType = " + travelVoucherArrayList.get(i).getMealType().getTypeOfMeal();
+            str = "amountOfDays = " + travelVoucherArrayList.get(i).getAmountOfDays() +
+                    " transportType = " + travelVoucherArrayList.get(i).getTransportType().getType() +
+                    " travelVoucherType = " + travelVoucherArrayList.get(i).getTravelVoucherType().getType() +
+                    " mealType = " + travelVoucherArrayList.get(i).getMealType().getType();
             System.out.println(str);
         }
     }
 
-    public ArrayList<TravelVoucher> getTravelVoucherByChoice (int days, int dayPrice, TypeOfTravelVoucher voucherType,
+    public ArrayList<TravelVoucher> getTravelVoucherByChoice (int days, TypeOfTravelVoucher voucherType,
                                                               TypeOfTransport transportType ,
                                                               TypeOfMeal mealType) {
         ArrayList<TravelVoucher> innerArrayList = new ArrayList<TravelVoucher>();
         for (int i = 0; i < travelVoucherArrayList.size(); i++) {
             if (travelVoucherArrayList.get(i).getAmountOfDays() == days &&
-                    travelVoucherArrayList.get(i).getPriceByDay() == dayPrice &&
                     travelVoucherArrayList.get(i).getTravelVoucherType().compareTo(voucherType) == 0 &&
                     travelVoucherArrayList.get(i).getTransportType().compareTo(transportType) == 0 &&
                     travelVoucherArrayList.get(i).getMealType().compareTo(mealType) == 0
@@ -67,12 +65,14 @@ public class AggregatorTravelVoucher {
     public ArrayList<TravelVoucher> getTravelVoucherByType (String type) {
         ArrayList<TravelVoucher> innerArrayList = new ArrayList<TravelVoucher>();
         for (int i = 0; i < travelVoucherArrayList.size(); i++) {
-            if (travelVoucherArrayList.get(i).getTravelVoucherType().getTypeOfTravelVoucher().equals(type)) {
+            if (travelVoucherArrayList.get(i).getTravelVoucherType().getType().equals(type)) {
                 innerArrayList.add(travelVoucherArrayList.get(i));
             }
         }
         return innerArrayList;
     }
+
+
 }
 
 

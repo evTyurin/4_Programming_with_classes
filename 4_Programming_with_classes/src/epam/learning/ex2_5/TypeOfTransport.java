@@ -1,19 +1,25 @@
 package epam.learning.ex2_5;
 
 public enum TypeOfTransport {
-    BUS("bus"),
-    TRAIN("train"),
-    PLAIN("plain"),
-    CAR("car"),
-    SHIP("ship");
+    BUS("bus", 30),
+    TRAIN("train", 75),
+    PLAIN("plain", 80),
+    CAR("car", 50),
+    SHIP("ship", 100);
 
-    public String typeOfTransport;
+    private final String type;
+    private final int pricePerTransfer;
 
-    private TypeOfTransport (String typeOfTransport) {
-        this.typeOfTransport = typeOfTransport;
+    TypeOfTransport (String type, int pricePerTransfer) {
+        this.type = type;
+        this.pricePerTransfer = pricePerTransfer;
     }
 
-    public String getTypeOfTransport () {
-        return typeOfTransport;
+    public String getType() {
+        return type;
+    }
+
+    public int getPricePerTransfer() {
+        return pricePerTransfer;
     }
 }
